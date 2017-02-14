@@ -10,6 +10,7 @@ $config = [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => '98asd768dfhj65glh34',
+            'enableCookieValidation' => false,
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
             ]
@@ -19,7 +20,8 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableSession' => false,
+            'loginUrl' => null,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -66,7 +68,10 @@ $config = [
                 'POST field' => 'field/create',
                 'GET,HEAD field' => 'field/index',
                 'field/<id>' => 'field/options',
-                'field' => 'field/options'
+                'field' => 'field/options',
+                //Login
+                'POST login' => 'site/login',
+                'login' => 'site/options',
             ],
         ],
 
