@@ -70,8 +70,8 @@ $config = [
                 'field/<id>' => 'field/options',
                 'field' => 'field/options',
                 //Login
-                'POST login' => 'site/login',
-                'login' => 'site/options',
+                'POST login' => 'user/index',
+                'login' => 'user/options',
             ],
         ],
 
