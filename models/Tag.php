@@ -4,27 +4,19 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "Tag".
- *
- * @property integer $id
- * @property string $name
- *
- * @property TagField[] $tagFields
- */
+
+
 class Tag extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
+
     public static function tableName()
     {
         return 'Tag';
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function rules()
     {
         return [
@@ -34,9 +26,8 @@ class Tag extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function attributeLabels()
     {
         return [
@@ -45,9 +36,8 @@ class Tag extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+
 
     public function getFields()
     {

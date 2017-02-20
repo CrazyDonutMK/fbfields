@@ -55,12 +55,16 @@ $config = [
                 'GET,HEAD tag/<id>' => 'tag/view',
                 'POST tag' => 'tag/create',
                 'GET,HEAD tag' => 'tag/index',
+                'tag/<id>' => 'tag/options',
+                'tag' => 'tag/options',
                 //District
                 'PUT,PATCH district/<id>' => 'district/update',
                 'DELETE district/<id>' => 'district/delete',
                 'GET,HEAD district/<id>' => 'district/view',
                 'POST district' => 'district/create',
                 'GET,HEAD district' => 'district/index',
+                'district/<id>' => 'district/options',
+                'district' => 'district/options',
                 //Field
                 'PUT,PATCH field/<id>' => 'field/update',
                 'DELETE field/<id>' => 'field/delete',

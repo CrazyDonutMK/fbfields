@@ -5,36 +5,23 @@ namespace app\models;
 use Yii;
 use yii\helpers\ArrayHelper;
 
-/**
- * This is the model class for table "Field".
- *
- * @property integer $id
- * @property string $adress
- * @property string $cost_type
- * @property string $field_type
- * @property string $time
- * @property string $phone
- * @property integer $district_id
- *
- * @property District $district
- * @property TagField[] $tagFields
- */
+
+
+
 class Field extends \yii\db\ActiveRecord
 {
 
     private $tags = [];
     public $tagids = [];
-    /**
-     * @inheritdoc
-     */
+
+
     public static function tableName()
     {
         return 'Field';
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function rules()
     {
         return [
@@ -47,9 +34,8 @@ class Field extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function attributeLabels()
     {
         return [
@@ -92,17 +78,15 @@ class Field extends \yii\db\ActiveRecord
         return $this->hasMany(Tag::className(), ['id' => 'tag_id'])->viaTable(TagField::tableName(), ['field_id' => 'id'])->all();
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+
     public function getDistrict()
     {
         return $this->hasOne(District::className(), ['id' => 'district_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+
     public function getTagFields()
     {
         return $this->hasMany(TagField::className(), ['field_id' => 'id']);

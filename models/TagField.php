@@ -4,29 +4,24 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "tag_field".
- *
- * @property integer $id
- * @property integer $field_id
- * @property integer $tag_id
- *
- * @property Field $field
- * @property Tag $tag
- */
+//Тег - идентификатор для категоризации записей.
+//
+//Атрибуты:
+//
+//Наименование - уникальное название сущности “Тег”. Например: Натуральный газон, Дешевый, Дорогой...
+
+
 class TagField extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
+
     public static function tableName()
     {
         return 'tag_field';
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function rules()
     {
         return [
@@ -37,9 +32,8 @@ class TagField extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
+
     public function attributeLabels()
     {
         return [
@@ -49,17 +43,15 @@ class TagField extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+
     public function getField()
     {
         return $this->hasOne(Field::className(), ['id' => 'field_id']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
+
     public function getTag()
     {
         return $this->hasOne(Tag::className(), ['id' => 'tag_id']);

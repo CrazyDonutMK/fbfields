@@ -4,27 +4,20 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "District".
- *
- * @property integer $id
- * @property string $name
- *
- * @property Field[] $fields
- */
+/* Район - это территориальная единица города Томска.
+ * Наименование - уникальное наименование района.
+ * Пример: Кировский, Ленинский..
+*/
+
 class District extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
+
     public static function tableName()
     {
         return 'District';
     }
 
-    /**
-     * @inheritdoc
-     */
+
     public function rules()
     {
         return [
@@ -34,9 +27,7 @@ class District extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
+
     public function attributeLabels()
     {
         return [
@@ -45,9 +36,7 @@ class District extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
+
     public function getFields()
     {
         return $this->hasMany(Field::className(), ['district_id' => 'id']);

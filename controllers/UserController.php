@@ -12,7 +12,7 @@ namespace app\controllers;
 Use Yii;
 use yii\rest\ActiveController;
 use app\models\LoginForm;
-use  yii\web\ServerErrorHttpException;
+use yii\web\UnauthorizedHttpException;
 
 class UserController extends ActiveController
 {
@@ -44,7 +44,8 @@ class UserController extends ActiveController
             if($model->validate()){
             return $model;
             } else {
-                throw new ServerErrorHttpException('Access denied.');
+
+                throw new UnauthorizedHttpException('Access denied.', 1);
             }
         }
 
